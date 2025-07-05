@@ -1,0 +1,260 @@
+/* client/src/components/MatchCard.css */
+
+.match-card {
+    background-color: #f8f8f8; /* Light gray background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    margin: 15px; /* Space around each card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    min-width: 280px; /* Minimum width for the card */
+    flex: 1; /* Allows cards to grow and shrink in a flex container (for .matches-grid) */
+    display: flex; /* Make it a flex container to arrange content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content vertically */
+}
+
+.match-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+}
+
+.match-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.match-card p {
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.match-card strong {
+    font-weight: bold;
+}
+
+.match-card .team-name {
+    color: #007bff; /* Azul vibrante como en la vista de admin */
+    font-weight: bold;
+    font-size: 1.3em; /* Un poco más grande para destacar */
+    /* margin-bottom: 5px; -- Ya no lo necesitamos aquí, la línea lo reemplaza */
+    text-transform: uppercase; /* Opcional: para que se vean más como títulos */
+}
+
+.match-score {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #007bff;
+    /* margin-top: 15px; -- Ya no lo necesitamos aquí, la línea lo reemplaza */
+    margin-bottom: 15px; /* Mantener espacio debajo de los scores */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Nueva línea separadora */
+.score-separator { /* Esta clase puede ir directamente en un div, no necesariamente dentro de .match-score */
+    width: 80%; /* Ancho de la línea, ajusta si es necesario */
+    max-width: 200px; /* Ancho máximo para que no sea demasiado larga en pantallas grandes */
+    height: 2px; /* Grosor de la línea */
+    background-color: #ffd700; /* Color amarillo, puedes elegir #4CAF50 si prefieres verde */
+    margin: 10px auto; /* Espacio vertical arriba y abajo, y centrado horizontalmente */
+    border-radius: 1px; /* Bordes ligeramente redondeados */
+}
+
+
+/* --- Buttons Styles (Mantienen tus estilos actuales) --- */
+
+.match-controls-live,
+.match-controls-scheduled {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.match-card button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    width: 100%;
+    margin-bottom: 8px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.match-card button:last-child {
+    margin-bottom: 0;
+}
+
+.score-buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.score-buttons button {
+    background-color: #28a745;
+    color: white;
+    flex: 1;
+    border: 1px solid #218838;
+}
+
+.score-buttons button:hover {
+    background-color: #218838;
+    border-color: #1a6f2c;
+}
+
+.btn-start {
+    background-color: #17a2b8;
+    color: white;
+    border: 1px solid #138496;
+}
+
+.btn-start:hover {
+    background-color: #138496;
+    border-color: #0e6c7b;
+}
+
+.btn-finish {
+    background-color: #fd7e14;
+    color: white;
+    border: 1px solid #cb6610;
+    margin-top: 20px;
+}
+
+.btn-finish:hover {
+    background-color: #e66b0a;
+    border-color: #a35308;
+}
+
+/* --- Card Indicators (Yellow/Red) Styles --- */
+
+.card-indicators {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-indicators .card {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    min-width: 25px;
+}
+
+.yellow-card {
+    background-color: #FFD700;
+    color: #333;
+}
+
+.red-card {
+    background-color: #FF4500;
+    color: white;
+}
+
+/* --- Card Buttons (Add Yellow/Red) Styles --- */
+
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.card-buttons button {
+    padding: 8px 10px;
+    font-size: 0.8em;
+    flex: 1 1 calc(50% - 5px);
+    max-width: calc(50% - 5px);
+    margin-bottom: 0;
+    min-height: 40px;
+}
+
+.btn-yellow {
+    background-color: #FFC107;
+    color: #333;
+    border: 1px solid #e0a800;
+}
+
+.btn-yellow:hover {
+    background-color: #e0a800;
+    border-color: #cc9900;
+}
+
+.btn-red {
+    background-color: #DC3545;
+    color: white;
+    border: 1px solid #c82333;
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+    border-color: #a71d2a;
+}
+
+/* Styles for the grid in App.js (assuming you'll use flexbox for the grid) */
+.matches-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* New styles for centering the public card indicators */
+.public-card-indicators-container {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if height allows, though not strictly needed here) */
+    margin-top: 5px; /* Add a little space above it if needed */
+    margin-bottom: 10px; /* Add a little space below it if needed */
+    padding: 5px; /* Add some padding around the cards */
+    /* background-color: #f0f0f0; /* Optional: for debugging, to see the container */
+}
+
+/* Ensure the individual card indicators retain their inline display if needed */
+.card-indicators .card {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 0 2px; /* Small space between cards */
+}
+
+.card-indicators .yellow-card {
+    background-color: #ffeb3b; /* Yellow */
+    color: #333;
+}
+
+.card-indicators .red-card {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+/* Separator between home and away cards */
+.card-indicators {
+    font-size: 0.9em; /* Adjust size if needed */
+    color: #666;
+}
+
+/* Ensure the admin view also benefits from card indicator styling if it uses .card-indicators */
+.match-score-admin .card-indicators {
+    margin-left: 10px; /* Add space between score and cards in admin view */
+    /* Add any other specific styling for admin view if different */
+    }

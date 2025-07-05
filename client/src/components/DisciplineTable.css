@@ -1,0 +1,121 @@
+/* client/src/components/DisciplineTable.css */
+
+.discipline-table-container {
+    margin-top: 60px; /* Aumentado a 60px para más separación de la tabla de clasificación */
+    background-color: #fff;
+    border-radius: 8_px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Make sure your <table> element in DisciplineTable.js has the class "discipline-table" */
+.discipline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.discipline-table th,
+.discipline-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Encabezados de la tabla de disciplina */
+/* Aumentamos la especificidad usando .discipline-table th */
+.discipline-table th {
+    background-color: #f0cc00; /* Fondo amarillo dorado como solicitado */
+    color: #333; /* Cambiado a negro oscuro para mejor contraste con amarillo */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    text-align: center; /* Títulos de columnas centrados */
+}
+
+/* Filas impares */
+.discipline-table tbody tr:nth-child(odd) {
+    background-color: #fffaf0; /* Blanco amarillento */
+}
+
+/* Efecto hover */
+/* Aumentamos la especificidad usando .discipline-table tbody tr:hover */
+.discipline-table tbody tr:hover {
+    background-color: #FFFACD; /* Amarillo claro al pasar el ratón por la fila */
+    transition: background-color 0.2s ease;
+}
+
+/* Columna de equipo */
+.discipline-table .team-name {
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Números en negro por defecto */
+.discipline-table td {
+    color: black;
+}
+
+/* Texto negativo en rojo */
+.discipline-table .negative-penalty {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Centrar contenido */
+.discipline-table .centered {
+    text-align: center;
+}
+
+/* Adicional para la vista de admin, si aplica (ajustes visuales para inputs) */
+.discipline-edit-inputs {
+    display: flex;
+    flex-direction: column; /* Apila para que se vean bien en espacios pequeños */
+    gap: 8px; /* Espacio entre los elementos */
+}
+
+.discipline-edit-inputs textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.discipline-edit-inputs .penalty-points-input {
+    width: 80px; /* Ancho fijo para el input de puntos */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    align-self: flex-start; /* Alinea este input a la izquierda si el flex-direction es column */
+}
+
+.action-buttons-group {
+    display: flex;
+    gap: 5px;
+    justify-content: center; /* Centrar los botones de Guardar/Cancelar */
+}
+
+/* Asegúrate de que tus botones de Guardar/Cancelar/Editar también tengan un estilo consistente */
+.btn-save, .btn-cancel, .btn-edit {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-save { background-color: #28a745; color: white; }
+.btn-save:hover { background-color: #218838; }
+
+.btn-cancel { background-color: #dc3545; color: white; }
+.btn-cancel:hover { background-color: #c82333; }
+
+.btn-edit { background-color: #007bff; color: white; }
+.btn-edit:hover { background-color: #0056b3; }

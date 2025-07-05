@@ -1,0 +1,69 @@
+/* client/src/index.css */
+
+/* Restablecimiento básico para eliminar márgenes y paddings predeterminados del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho/alto del elemento */
+}
+
+/* Estilos para el cuerpo del documento */
+body {
+  font-family: 'Arial', sans-serif; /* Fuente por defecto */
+  -webkit-font-smoothing: antialiased; /* Mejorar el renderizado de la fuente en WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Mejorar el renderizado de la fuente en Firefox */
+  background-color: #f0f2f5; /* Un fondo gris claro para la aplicación */
+  color: #333; /* Color de texto base */
+  line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
+}
+
+/* Estilos para el elemento raíz de React */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que la aplicación ocupe al menos la altura completa de la ventana */
+}
+
+/* Estilos básicos para enlaces, si los usas */
+a {
+  color: #007bff; /* Color azul para enlaces */
+  text-decoration: none; /* Sin subrayado por defecto */
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+/* Estilos para botones, si los usas */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Estilos para encabezados (puedes personalizarlos más tarde) */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+}
+
+/* Estilos para contenedores principales (si los usas) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

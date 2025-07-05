@@ -1,0 +1,193 @@
+/* client/src/components/StandingsTable.css */
+
+.standings-table {
+    width: 90%; /* Occupy most of the width */
+    margin: 30px auto; /* Center the table and add space */
+    border-collapse: collapse; /* Collapse borders between cells */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background for the table */
+}
+
+.standings-table th,
+.standings-table td {
+    border: 1px solid #ddd; /* Light gray borders */
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Encabezados de la tabla */
+.standings-table th {
+    background-color: #00805a; /* Azul vibrante */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+}
+
+.standings-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for readability */
+}
+
+.standings-table tr:hover {
+    background-color: #e6f7ff; /* Light blue hover effect */
+}
+
+/* Style for qualifying teams */
+.standings-table .qualifying-row {
+    background-color: #d4edda; /* Light green for qualifying teams */
+    font-weight: bold;
+    color: #155724; /* Darker green text */
+}
+
+/* Center numbers for better readability (optional) */
+.standings-table td:nth-child(2), /* PJ */
+.standings-table td:nth-child(3), /* G */
+.standings-table td:nth-child(4), /* E */
+.standings-table td:nth-child(5), /* P */
+.standings-table td:nth-child(6), /* GF */
+.standings-table td:nth-child(7), /* GC */
+.standings-table td:nth-child(8), /* DG */
+.standings-table td:nth-child(9) { /* Pts */
+    text-align: center;
+}
+
+/* Small adjustments for responsiveness */
+@media (max-width: 768px) {
+    .standings-table {
+        width: 100%;
+        font-size: 0.9em;
+    }
+    .standings-table th,
+    .standings-table td {
+        padding: 8px 10px;
+    }
+}
+/* client/src/App.css o client/src/components/StandingsTable.css */
+
+/* Estilos para el contenedor principal si lo necesitas */
+.App {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Estilos Generales de la Tabla --- */
+.standings-table-container {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que las esquinas redondeadas funcionen */
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre celdas */
+    margin: 0;
+}
+
+
+
+/* Filas impares */
+.standings-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Efecto hover en las filas */
+.standings-table tbody tr:hover {
+    background-color: #e9e9e9;
+    transition: background-color 0.2s ease;
+}
+
+/* Fila de equipos que clasifican */
+.standings-table .qualifying-row {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Texto verde oscuro */
+    font-weight: bold;
+}
+
+/* Opcional: Estilo para la columna de Clasifica */
+.standings-table td:last-child {
+    text-align: center; /* Centrar "Sí" o "No" */
+    font-weight: bold;
+}
+
+.matches-section {
+    background-color: #e0f7fa; /* Un azul claro para la sección */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos para los títulos de la aplicación --- */
+h1, h2 {
+    text-align: center;
+    color: #0056b3; /* Un azul más oscuro */
+    margin-bottom: 20px;
+}
+
+/* --- Estilos para la tabla de Clasificaciones --- */
+.standings-table-container {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.standings-table th,
+.standings-table td {
+    padding: 12px 15px;
+    text-align: left; /* Default */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Centrar contenido de th y td con la clase `centered` */
+.standings-table .centered {
+    text-align: center;
+}
+
+/* Filas impares */
+.standings-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Efecto hover en las filas */
+.standings-table tbody tr:hover {
+    background-color: #e9e9e9;
+    transition: background-color 0.2s ease;
+}
+
+/* Nombres de equipo en azul */
+.standings-table .team-name {
+    color: #0b7f07; /* Azul para el nombre del equipo */
+    font-weight: bold;
+}
+
+/* Colores para la Diferencia de Goles (DG) */
+.standings-table .positive-gd {
+    color: #28a745; /* Verde para positivo */
+    font-weight: bold;
+}
+
+.standings-table .negative-gd {
+    color: #dc3545; /* Rojo para negativo */
+    font-weight: bold;
+}
+
+.standings-table .zero-gd {
+    color: #333; /* Negro/gris oscuro para cero */
+    font-weight: normal;
+}

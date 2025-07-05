@@ -1,0 +1,210 @@
+/* client/src/components/AdminDashboard.css */
+
+.admin-dashboard {
+    padding: 20px;
+    background-color: #f4f7f6;
+    min-height: 100vh;
+}
+
+.admin-dashboard h1, .admin-dashboard h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.new-match-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.new-match-form input[type="text"],
+.new-match-form input[type="date"],
+.new-match-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.new-match-form button[type="submit"] {
+    grid-column: 1 / -1;
+    padding: 12px 20px;
+    background-color: #28a745; /* Verde para crear */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.new-match-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.matches-admin-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.match-admin-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.match-admin-card h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.match-admin-card p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.admin-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.admin-controls button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
+}
+
+.admin-controls button:hover {
+    opacity: 0.9;
+}
+
+/* Estilos de botones por función */
+.btn-start-live { background-color: #28a745; color: white; } /* Verde - Poner en Vivo */
+.btn-finish { background-color: #dc3545; color: white; } /* Rojo - Finalizar Partido */
+
+.btn-score-home { background-color: #007bff; color: white; } /* Azul - Gol Home */
+.btn-score-away { background-color: #17a2b8; color: white; } /* Azul-cian - Gol Away */
+
+.btn-yellow-card { background-color: #ffc107; color: #333; } /* Amarillo - Tarjeta Amarilla */
+.btn-red-card { background-color: #dc3545; color: white; } /* Rojo - Tarjeta Roja */
+
+.btn-enable-penalties { background-color: #6f42c1; color: white; } /* Morado - Habilitar Penales */
+.penalty-controls-live {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%; /* Ocupa todo el ancho */
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.btn-penalty-goal-home, .btn-penalty-goal-away { background-color: #28a745; color: white; } /* Verde - Gol Penal */
+.btn-penalty-miss-home, .btn-penalty-miss-away { background-color: #6c757d; color: white; } /* Gris - Fallo Penal */
+
+
+.btn-edit { background-color: #ffc107; color: #333; } /* Amarillo - Editar */
+.btn-delete { background-color: #dc3545; color: white; } /* Rojo - Eliminar */
+
+
+/* Estilos para el formulario de edición */
+.edit-form {
+    display: grid; /* Usar grid para mejor alineación */
+    grid-template-columns: 1fr 2fr; /* Columna para label, columna para input */
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+}
+
+.edit-form label {
+    text-align: right; /* Alinea los labels a la derecha */
+    padding-right: 10px;
+    align-self: center; /* Centra verticalmente el label */
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="number"],
+.edit-form input[type="date"],
+.edit-form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.edit-form input[type="checkbox"] {
+    justify-self: start; /* Alinea el checkbox al inicio de su celda */
+    width: auto; /* Evita que el checkbox ocupe todo el ancho */
+}
+
+
+.edit-form button {
+    grid-column: 1 / -1; /* Botones ocupan todo el ancho */
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    margin-top: 5px;
+}
+
+.edit-form button:last-of-type { /* Selecciona el botón 'Cancelar' */
+    background-color: #6c757d;
+}
+
+.penalty-edit-section {
+    grid-column: 1 / -1; /* Ocupa todo el ancho en el grid */
+    border-top: 1px dashed #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.penalty-edit-section button {
+    background-color: #17a2b8; /* Un color distinto para los botones de reset de penal */
+}
+
+/* Estilos de navegación principal */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #555;
+}
+
