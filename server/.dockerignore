@@ -1,0 +1,28 @@
+# .dockerignore (en la raíz del proyecto para el backend)
+
+# Ignorar la carpeta de módulos de Node.js (serán instalados dentro del contenedor)
+node_modules
+
+# Ignorar el directorio del cliente (frontend), ya que tiene su propio Dockerfile
+client
+
+# Ignorar archivos de depuración o de configuración local
+.env
+.env.development
+.env.production
+.env.*.local
+
+# Ignorar el caché de npm
+.npm
+
+# Ignorar archivos de editor o de control de versiones
+.git
+.gitignore
+.DS_Store
+
+# Si tienes archivos de log que no deben ir en la imagen
+*.log
+npm-debug.log*
+
+# Archivos de VS Code u otros IDEs
+.vscode/
